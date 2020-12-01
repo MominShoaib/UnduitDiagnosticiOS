@@ -1,0 +1,48 @@
+PODS:
+  - Alamofire (4.9.1)
+  - AlamofireImage (3.6.0):
+    - Alamofire (~> 4.9)
+  - BottomPopup (0.6.0)
+  - IQKeyboardManagerSwift (6.5.4)
+  - MBProgressHUD (1.1.0)
+  - ReachabilitySwift (5.0.0)
+  - swiftScan (1.1.5)
+  - SwiftyPickerPopover (6.6.6)
+  - Toast-Swift (5.0.1)
+
+DEPENDENCIES:
+  - AlamofireImage
+  - BottomPopup
+  - IQKeyboardManagerSwift
+  - MBProgressHUD
+  - ReachabilitySwift
+  - swiftScan
+  - SwiftyPickerPopover
+  - Toast-Swift
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - AlamofireImage
+    - BottomPopup
+    - IQKeyboardManagerSwift
+    - MBProgressHUD
+    - ReachabilitySwift
+    - swiftScan
+    - SwiftyPickerPopover
+    - Toast-Swift
+
+SPEC CHECKSUMS:
+  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  AlamofireImage: be9963c6582d68b39e89191f64c82a7d7bf40fdd
+  BottomPopup: 1d5649a3b29396238f0e8f3c82075a7bfcf37ba7
+  IQKeyboardManagerSwift: 2dde0fc70110e8eac7ccce2a46fdbec6a850b414
+  MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
+  ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
+  swiftScan: bc6dbf74e6a579c45a861691afc44628d8d9f6ab
+  SwiftyPickerPopover: a402960a6687c911ffcb4e9fb282a1bc61186ab4
+  Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
+
+PODFILE CHECKSUM: 7758e77ad20b01b9ae05511c3489cb5b1955ed3e
+
+COCOAPODS: 1.8.4
