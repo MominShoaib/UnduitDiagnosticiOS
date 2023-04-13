@@ -51,7 +51,7 @@ open class LBXScanWrapper: NSObject, AVCaptureMetadataOutputObjectsDelegate {
     var successBlock: ([LBXScanResult]) -> Void
 
     //是否需要拍照
-    var isNeedCaptureImage = false
+    var isNeedCaptureImage: Bool
 
     //当前扫码结果是否处理
     var isNeedScanResult: Bool = true
@@ -141,27 +141,27 @@ open class LBXScanWrapper: NSObject, AVCaptureMetadataOutputObjectsDelegate {
 
     public func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
         captureOutput(output, didOutputMetadataObjects: metadataObjects, from: connection)
-       
-       
     }
 
     func start() {
         if !session.isRunning {
             isNeedScanResult = true
-            session.startRunning()
+            DispatchQueue.global(qos: .background).async {
+                self.session.startRunning()
+            }
         }
     }
     func stop() {
         if session.isRunning {
             isNeedScanResult = false
-            session.stopRunning()
+            DispatchQueue.global(qos: .background).async {
+                self.session.stopRunning()
+            }
         }
     }
 
     open func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [Any]!, from connection: AVCaptureConnection!) {
-        
-      print("!isNeedScanResult",!isNeedScanResult)
-      
+
         if !isNeedScanResult {
             //上一帧处理中
             return

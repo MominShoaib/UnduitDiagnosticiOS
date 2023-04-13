@@ -28,9 +28,9 @@ class LBXPermissions: NSObject {
                 }
             })
         case .limited:
-            print("limted case")
+            print("case limited")
         @unknown default:
-            print("default case")
+            print("case default")
         }
     }
 

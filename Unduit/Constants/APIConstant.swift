@@ -8,7 +8,7 @@
 
 import Foundation
 extension URL{
-    static let baseUrl = "https://www.unduitwireless.com/"
+    static let baseUrl = "https://www.unduit.com/"
     static let host = baseUrl + "api/v2/"
     
     enum Test {

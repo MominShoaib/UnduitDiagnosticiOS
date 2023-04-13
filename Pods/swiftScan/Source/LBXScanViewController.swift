@@ -91,8 +91,10 @@ open class LBXScanViewController: UIViewController, UIImagePickerControllerDeleg
 
         //结束相机等待提示
         qRScanView?.deviceStopReadying()
+
         //开始扫描动画
         qRScanView?.startScanAnimation()
+
         //相机运行
         scanObj?.start()
     }
@@ -103,6 +105,7 @@ open class LBXScanViewController: UIViewController, UIImagePickerControllerDeleg
             self.view.addSubview(qRScanView!)
         }
         qRScanView?.deviceStartReadying(readyStr: readyString)
+
     }
 
     /**
@@ -129,8 +132,11 @@ open class LBXScanViewController: UIViewController, UIImagePickerControllerDeleg
     }
 
     override open func viewWillDisappear(_ animated: Bool) {
+
         NSObject.cancelPreviousPerformRequests(withTarget: self)
+
         qRScanView?.stopScanAnimation()
+
         scanObj?.stop()
     }
 
@@ -150,15 +156,17 @@ open class LBXScanViewController: UIViewController, UIImagePickerControllerDeleg
     }
 
     // MARK: - ----相册选择图片识别二维码 （条形码没有找到系统方法）
-    public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+    public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: Any]) {
         picker.dismiss(animated: true, completion: nil)
-              guard let image = info[.editedImage] as? UIImage else {
-                  print("Image not found!")
-                  return
-              }
+
+        var image: UIImage? = info[UIImagePickerController.InfoKey.editedImage.rawValue] as? UIImage
+
+        if (image == nil ) {
+            image = info[UIImagePickerController.InfoKey.originalImage.rawValue] as? UIImage
+        }
 
         if(image != nil) {
-            let arrayResult = LBXScanWrapper.recognizeQRImage(image: image)
+            let arrayResult = LBXScanWrapper.recognizeQRImage(image: image!)
             if arrayResult.count > 0 {
                 handleCodeResult(arrayResult: arrayResult)
                 return
