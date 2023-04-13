@@ -27,6 +27,10 @@ class LBXPermissions: NSObject {
                     comletion(status == PHAuthorizationStatus.authorized ? true:false)
                 }
             })
+        case .limited:
+            print("limted case")
+        @unknown default:
+            print("default case")
         }
     }
 
