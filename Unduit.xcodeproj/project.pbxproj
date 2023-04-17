@@ -86,7 +86,7 @@
 		014E28DF23C88CF8002721A9 /* ViewShadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewShadow.swift; sourceTree = "<group>"; };
 		014E28E123C88E15002721A9 /* UIView+Inspectable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Inspectable.swift"; sourceTree = "<group>"; };
 		0163C99F23CC93D70070BA40 /* ThankYouViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThankYouViewController.swift; sourceTree = "<group>"; };
-		01AFF2AA23AA29D600C587D5 /* Unduit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Unduit.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		01AFF2AA23AA29D600C587D5 /* Unduit Diagnostic App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Unduit Diagnostic App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		01AFF2AD23AA29D600C587D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		01AFF2AF23AA29D600C587D5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		01AFF2B723AA29D600C587D5 /* Unduit.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Unduit.xcdatamodel; sourceTree = "<group>"; };
@@ -232,7 +232,7 @@
 		01AFF2AB23AA29D600C587D5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				01AFF2AA23AA29D600C587D5 /* Unduit.app */,
+				01AFF2AA23AA29D600C587D5 /* Unduit Diagnostic App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -417,7 +417,7 @@
 				01E1D36223AA2D7300589BCA /* Alamofire */,
 			);
 			productName = Unduit;
-			productReference = 01AFF2AA23AA29D600C587D5 /* Unduit.app */;
+			productReference = 01AFF2AA23AA29D600C587D5 /* Unduit Diagnostic App.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -698,9 +698,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2.3;
+				CURRENT_PROJECT_VERSION = 2.4;
 				DEVELOPMENT_TEAM = A5DTHBM3TK;
 				INFOPLIST_FILE = Unduit/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Unduit Diagnostic App";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.business";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -709,7 +710,7 @@
 				);
 				MARKETING_VERSION = 2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.unduit;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Unduit Diagnostic App";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -723,9 +724,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2.3;
+				CURRENT_PROJECT_VERSION = 2.4;
 				DEVELOPMENT_TEAM = A5DTHBM3TK;
 				INFOPLIST_FILE = Unduit/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Unduit Diagnostic App";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.business";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -734,7 +736,7 @@
 				);
 				MARKETING_VERSION = 2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.unduit;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Unduit Diagnostic App";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
