@@ -104,14 +104,14 @@ class DeviceDetailViewController: UIViewController {//,ENSideMenuDelegate
     
     //MARK: - Action
     /*
-    @IBAction func actionOpenMenu(_ sender: Any) {  
-       panel?.openRight(animated: true)
-        guard let right = panel?.right as? RightMenuViewController else{
-            return
-        }
-        right.apiCall()
-    }
-    */
+     @IBAction func actionOpenMenu(_ sender: Any) {
+     panel?.openRight(animated: true)
+     guard let right = panel?.right as? RightMenuViewController else{
+     return
+     }
+     right.apiCall()
+     }
+     */
     @IBAction func unwindeSegueToDeviceDetail(_ sender:UIStoryboardSegue){
     }
 }
@@ -147,18 +147,18 @@ extension DeviceDetailViewController:UITableViewDataSource{
         if let radioAccessTechnology = telefonyInfo.currentRadioAccessTechnology{
             switch radioAccessTechnology{
             case CTRadioAccessTechnologyLTE: print("LTE (4G)")
-            cell.lblCellularType.text = "LTE (4G)"
+                cell.lblCellularType.text = "LTE (4G)"
             case CTRadioAccessTechnologyWCDMA: print("3G")
-            cell.lblCellularType.text = "3G"
+                cell.lblCellularType.text = "3G"
             case CTRadioAccessTechnologyEdge: print("EDGE (2G)")
-            cell.lblCellularType.text = "EDGE (2G)"
+                cell.lblCellularType.text = "EDGE (2G)"
             default: print("Other")
-            cell.lblCellularType.text = "Not Available"
+                cell.lblCellularType.text = "Not Available"
             }
         }else{
             cell.lblCellularType.text = "Not Available"
         }
-       
+        
         let ct =  cell.lblCellularType.text
         deviceInfo.cellularType = ct
         presenter.apiCallForUpdateDeviceInfo(deviceInfo: deviceInfo)
@@ -275,7 +275,7 @@ func userDeviceName() -> String {
     }()
     
     //iPhone
-         if platform == "iPhone1,1"   { return "iPhone" }
+    if platform == "iPhone1,1"   { return "iPhone" }
     else if platform == "iPhone1,2"   { return "iPhone" }
     else if platform == "iPhone2,1"   { return "iPhone" }
     else if platform == "iPhone3,1"   { return "iPhone" }
@@ -309,8 +309,22 @@ func userDeviceName() -> String {
     else if platform == "iPhone12,1"  { return "iPhone 11" }
     else if platform == "iPhone12,3"  { return "iPhone 11 Pro" }
     else if platform == "iPhone12,5"  { return "iPhone 11 Pro Max" }
-        
-        //iPod Touch
+    else if platform == "iPhone12,8" {return "iPhone SE (2nd generation)"}
+    else if platform == "iPhone13,1" { return "iPhone 12 mini"}
+    else if platform == "iPhone13,2" { return "iPhone 12"}
+    else if platform == "iPhone13,3" {return "iPhone 12 Pro"}
+    else if platform == "iPhone13,4" {return "iPhone 12 Pro Max"}
+    else if platform == "iPhone14,2" {return "iPhone 13 Pro"}
+    else if platform == "iPhone14,3" {return "iPhone 13 Pro Max"}
+    else if platform == "iPhone14,4" {return "iPhone 13 mini"}
+    else if platform == "iPhone14,5" {return "iPhone 13"}
+    else if platform == "iPhone14,7" {return "iPhone 14"}
+    else if platform == "iPhone14,8" {return "iPhone 14 Plus"}
+    else if platform == "iPhone15,2" {return "iPhone 14 Pro"}
+    else if platform == "iPhone15,3" {return "iPhone 14 Pro Max"}
+    else if platform == "iPhone14,6" {return "iPhone SE (3rd generation)"}
+    
+    //iPod Touch
     else if platform == "iPod1,1"     { return "iPod Touch (1st generation)" }
     else if platform == "iPod2,1"     { return "iPod Touch (2nd generation)" }
     else if platform == "iPod3,1"     { return "iPod Touch (3rd generation)" }
@@ -318,8 +332,8 @@ func userDeviceName() -> String {
     else if platform == "iPod5,1"     { return "iPod Touch (5th generation)" }
     else if platform == "iPod7,1"     { return "iPod Touch (6th generation)" }
     else if platform == "iPod9,1"     { return "iPod Touch (7th generation)" }
-        
-        //iPad
+    
+    //iPad
     else if platform == "iPad1,1"     { return "iPad (1st generation)" }
     else if platform == "iPad2,1"     { return "iPad 2 (Wi-Fi)" }
     else if platform == "iPad2,2"     { return "iPad 2 (GSM)" }
@@ -337,8 +351,14 @@ func userDeviceName() -> String {
     else if platform == "iPad7,6"     { return "iPad (6th generation) (Cellular)" }
     else if platform == "iPad7,11"     { return "iPad (7th generation) (Wi-Fi)" }
     else if platform == "iPad7,12"     { return "iPad (7th generation) (Cellular)" }
-        
-        //iPad Mini
+    else if platform == "iPad11,6" { return "iPad (8th generation) (Wi-Fi)" }
+    else if platform == "iPad11,7" { return "iPad (8th generation) (Cellular)" }
+    else if platform == "iPad13,1" { return "iPad (9th generation) (Wi-Fi)" }
+    else if platform == "iPad13,2" { return "iPad (9th generation) (Cellular)" }
+    else if platform == "iPad14,1" { return "iPad (10th generation) (Wi-Fi)" }
+    else if platform == "iPad14,2" { return "iPad (10th generation) (Cellular)" }
+    
+    //iPad Mini
     else if platform == "iPad2,5"     { return "iPad mini (Wi-Fi)" }
     else if platform == "iPad2,6"     { return "iPad mini (GSM)" }
     else if platform == "iPad2,7"     { return "iPad mini (GSM+CDMA)" }
@@ -352,8 +372,10 @@ func userDeviceName() -> String {
     else if platform == "iPad5,2"     { return "iPad mini 4 (Cellular)" }
     else if platform == "iPad11,1"    { return "iPad mini (5th generation) (Wi-Fi)" }
     else if platform == "iPad11,2"    { return "iPad mini (5th generation)  (Cellular)" }
-        
-        //iPad Air
+    else if platform == "iPad14,1"    { return "iPad mini (6th generation) (Wi-Fi)" }
+    else if platform == "iPad14,2"    { return "iPad mini (6th generation) (Cellular)" }
+    
+    //iPad Air
     else if platform == "iPad4,1"     { return "iPad Air (Wi-Fi)" }
     else if platform == "iPad4,2"     { return "iPad Air (Cellular)" }
     else if platform == "iPad4,3"     { return "iPad Air (China)" }
@@ -361,8 +383,12 @@ func userDeviceName() -> String {
     else if platform == "iPad5,4"     { return "iPad Air 2 (Cellular)" }
     else if platform == "iPad11,3"    { return "iPad Air (3rd generation) (Wi-Fi)" }
     else if platform == "iPad11,4"    { return "iPad Air (3rd generation) (Cellular)" }
-        
-        //iPad Pro
+    else if platform == "iPad13,1"       { return "iPad Air (4th generation) (Wi-Fi)" }
+    else if platform == "iPad13,2"       { return "iPad Air (4th generation) (Cellular)" }
+    else if platform == "iPad14,3"       { return "iPad Air (5th generation) (Wi-Fi)" }
+    else if platform == "iPad14,4"       { return "iPad Air (5th generation) (Cellular)" }
+    
+    //iPad Pro
     else if platform == "iPad6,3"     { return "iPad Pro 9.7\" (Wi-Fi)" }
     else if platform == "iPad6,4"     { return "iPad Pro 9.7\" (Cellular)" }
     else if platform == "iPad6,7"     { return "iPad Pro 12.9\" (Wi-Fi)" }
@@ -379,15 +405,19 @@ func userDeviceName() -> String {
     else if platform == "iPad8,6"     { return "iPad Pro 12.9\" (3rd generation) (Cellular)" }
     else if platform == "iPad8,7"     { return "iPad Pro 12.9\" (3rd generation) (Wi-Fi, 1TB)" }
     else if platform == "iPad8,8"     { return "iPad Pro 12.9\" (3rd generation) (Cellular, 1TB)" }
-        
-        //Apple TV
+    else if platform == "iPad8,9" || platform == "iPad8,10" { return "iPad Pro (11-inch) (2nd generation)" }
+    else if platform == "iPad13,1" || platform == "iPad13,2" || platform == "iPad13,3" || platform == "iPad13,4" { return "iPad Pro (11-inch) (3rd generation)" }
+    else if platform == "iPad13,5" || platform == "iPad13,6" || platform == "iPad13,7" || platform == "iPad13,8" { return "iPad Pro (12.9-inch) (5th generation)" }
+    
+    //Apple TV
     else if platform == "AppleTV2,1"  { return "Apple TV 2G" }
     else if platform == "AppleTV3,1"  { return "Apple TV 3" }
     else if platform == "AppleTV3,2"  { return "Apple TV 3 (2013)" }
     else if platform == "AppleTV5,3"  { return "Apple TV 4" }
     else if platform == "AppleTV6,2"  { return "Apple TV 4K" }
-        
-        //Apple Watch
+    else if platform == "AppleTV11,1" { return "Apple TV 4K (2nd generation)" }
+    
+    //Apple Watch
     else if platform == "Watch1,1"    { return "Apple Watch (1st generation) (38mm)" }
     else if platform == "Watch1,2"    { return "Apple Watch (1st generation) (42mm)" }
     else if platform == "Watch2,6"    { return "Apple Watch Series 1 (38mm)" }
@@ -402,12 +432,26 @@ func userDeviceName() -> String {
     else if platform == "Watch4,2"    { return "Apple Watch Series 4 (44mm)" }
     else if platform == "Watch4,3"    { return "Apple Watch Series 4 (40mm Cellular)" }
     else if platform == "Watch4,4"    { return "Apple Watch Series 4 (44mm Cellular)" }
-        //else if platform == "Watch"    { return "Apple Watch Series 5 (40mm)" } //5,1?
-        //else if platform == "Watch"    { return "Apple Watch Series 5 (44mm)" } //5,2?
-        //else if platform == "Watch"    { return "Apple Watch Series 5 (40mm Cellular)" } //5,3?
-        //else if platform == "Watch"    { return "Apple Watch Series 5 (44mm Cellular)" } //5,4?
-        
-        //Simulator
+    else if platform == "Watch5,1"    { return "Apple Watch Series 5 (40mm)" }
+    else if platform == "Watch5,2"    { return "Apple Watch Series 5 (44mm)" }
+    else if platform == "Watch5,3"    { return "Apple Watch Series 5 (40mm Cellular)" }
+    else if platform == "Watch5,4"    { return "Apple Watch Series 5 (44mm Cellular)" }
+    else if platform == "WatchSE2,4"  { return "Apple Watch SE (2nd gen) (40mm)" }
+    else if platform == "WatchSE2,5"  { return "Apple Watch SE (2nd gen) (44mm)" }
+    else if platform == "Watch6,1"    { return "Apple Watch Series 6 (40mm)" }
+    else if platform == "Watch6,2"    { return "Apple Watch Series 6 (44mm)" }
+    else if platform == "Watch6,3"    { return "Apple Watch Series 6 (40mm Cellular)" }
+    else if platform == "Watch6,4"    { return "Apple Watch Series 6 (44mm Cellular)" }
+    else if platform == "Watch7,1"    { return "Apple Watch Series 7 (41mm)" }
+    else if platform == "Watch7,2"    { return "Apple Watch Series 7 (45mm)" }
+    else if platform == "Watch7,3"    { return "Apple Watch Series 7 (41mm Cellular)" }
+    else if platform == "Watch7,4"    { return "Apple Watch Series 7 (45mm Cellular)" }
+    else if platform == "Watch8,1"    { return "Apple Watch Series 8 (41mm)" }
+    else if platform == "Watch8,2"    { return "Apple Watch Series 8 (45mm)" }
+    else if platform == "Watch8,3"    {return "Apple Watch Series 8 (41mm Cellular)"}
+    else if platform == "Watch8,5" || platform ==  "Watch8,6" || platform ==  "Watch8,7" || platform == "Watch8,8" {return "Apple Watch Ultra"}
+    
+    //Simulator
     else if platform == "i386"        { return "Simulator" }
     else if platform == "x86_64"      { return "Simulator"}
     
