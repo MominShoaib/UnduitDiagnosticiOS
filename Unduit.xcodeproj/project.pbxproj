@@ -698,7 +698,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2.6;
+				CURRENT_PROJECT_VERSION = 2.7;
 				DEVELOPMENT_TEAM = A5DTHBM3TK;
 				INFOPLIST_FILE = Unduit/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Unduit Diagnostic";
@@ -724,7 +724,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2.6;
+				CURRENT_PROJECT_VERSION = 2.7;
 				DEVELOPMENT_TEAM = A5DTHBM3TK;
 				INFOPLIST_FILE = Unduit/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Unduit Diagnostic";
