@@ -65,6 +65,12 @@ class BarCodeScanViewController:LBXScanViewController,UIPopoverPresentationContr
         }
         return nil
     }
+    
+    func roundToNearestStorageCapacity(_ storage: Double) -> Double {
+        let availableStorageCapacities = [4.0, 8.0, 16.0, 32.0, 64.0, 128.0, 256.0, 512.0, 1024.0]
+        return availableStorageCapacities.min(by: { abs($0 - storage) < abs($1 - storage) })!
+    }
+    
     //MARK: - QRCode Result
     override func handleCodeResult(arrayResult: [LBXScanResult]) {
         for result: LBXScanResult in arrayResult {
@@ -81,8 +87,9 @@ class BarCodeScanViewController:LBXScanViewController,UIPopoverPresentationContr
                 deviceInfo.deviceVersion = UIDevice.current.systemVersion
                 deviceInfo.deviceUuid = (UIDevice.current.identifierForVendor)?.description
                 if let total = getTotalSize(){
-                    let storage = Int(Units(bytes: total).gigabytes)
-                    deviceInfo.deviceStorage = storage.description + "GB"
+                    //let storage = Int(Units(bytes: total).gigabytes)
+                    let storage = roundToNearestStorageCapacity(Units(bytes: total).gigabytes)
+                    deviceInfo.deviceStorage = storage.description + " GB"
                 }
                 let cellularType:String?
                 let telefonyInfo = CTTelephonyNetworkInfo()
